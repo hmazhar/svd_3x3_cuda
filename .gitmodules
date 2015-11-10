@@ -1,0 +1,3 @@
+[submodule "gpu_math"]
+	path = gpu_math
+	url = git@github.com:hmazhar/gpu_math.git
