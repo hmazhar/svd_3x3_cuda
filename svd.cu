@@ -1,13 +1,13 @@
-#include "defines.h"
-#include "real2.h"
-#include "real3.h"
-#include "real4.h"
-#include "matrix.h"
+#include "gpu_math/defines.h"
+#include "gpu_math/real2.h"
+#include "gpu_math/real3.h"
+#include "gpu_math/real4.h"
+#include "gpu_math/matrix.h"
 
-// Code based on code from PhysBam
+// This code is based on code from Physbam
+
 // Oliver K. Smith. 1961. Eigenvalues of a symmetric 3 × 3 matrix. Commun. ACM 4, 4 (April 1961), 168-. DOI=http://dx.doi.org/10.1145/355578.366316
-
-__host__ __device__ real3 Fast_Eigenvalues(const SymMat33& A)  // 24 mults, 20 adds, 1 atan2, 1 sincos, 2 sqrts
+__host__ __device__ real3 Fast_Eigenvalues(const SymMat33& A) 
 {
     real m = 1.0f / 3.0f * (A.x11 + A.x22 + A.x33);
     real a11 = A.x11 - m;
